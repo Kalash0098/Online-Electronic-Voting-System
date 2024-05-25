@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vote for a Political Party</title>
+    <style>
+        /* Style for the main container */
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #ffffff; /* White background color */
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        /* Style for the heading */
+        h2 {
+            text-align: center;
+            color: #333; /* Dark text color */
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Style for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        /* Style for table cells */
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc; /* Light border */
+            text-align: left;
+        }
+
+        /* Header style */
+        th {
+            background-color: #f8f8f8; /* Light gray background for headers */
+            color: #333; /* Dark text color */
+        }
+
+        /* Style for the input fields */
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Style for the submit button */
+        input[type="submit"] {
+            padding: 12px 24px;
+            background-color: #28a745; /* Green background color */
+            color: white; /* White text color */
+            border: none; /* No border */
+            border-radius: 8px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Submit button hover effect */
+        input[type="submit"]:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <!-- Heading -->
+        <h2>Vote for a Political Party</h2>
+
+        <!-- Table of Indian political parties -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Party</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bharatiya Janata Party (BJP)</td>
+                </tr>
+                <tr>
+                    <td>Indian National Congress (INC)</td>
+                </tr>
+                <tr>
+                    <td>Communist Party of India (CPI)</td>
+                </tr>
+                <tr>
+                    <td>Nationalist Congress Party (NCP)</td>
+                </tr>
+                <!-- Add more parties as needed -->
+            </tbody>
+        </table>
+
+        <!-- Form for voting -->
+       <form th:action="@{/evm}" th:object="${evm}" method="post">
+            <input type="text" name="partyName" placeholder="Enter the name of the party you want to vote for" required>
+            <input type="submit" value="Submit Vote">
+        </form>
+    </div>
+</body>
+
+</html>

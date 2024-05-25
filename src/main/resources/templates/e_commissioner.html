@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        /* Style for the main container */
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f8f8f8; /* Light gray background color */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            text-align: center; /* Center text */
+        }
+
+        /* Style for the heading */
+        h2 {
+            color: #333; /* Dark text color */
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Style for the input fields */
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Style for the submit button */
+        input[type="submit"] {
+            padding: 12px 24px;
+            background-color: #28a745; /* Green background color */
+            color: white; /* White text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px;
+            cursor: pointer; /* Pointer cursor */
+        }
+
+        /* Submit button hover effect */
+        input[type="submit"]:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <!-- Heading -->
+        <h2>Login</h2>
+
+        <!-- Form to take only ID to login -->
+      <form th:action="@{/e_commissioner}" th:object="${e_commissioner}" method="post">
+            <input type="text" name="id" placeholder="Enter your ID" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
